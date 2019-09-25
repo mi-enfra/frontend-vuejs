@@ -13,6 +13,8 @@
 
 .section {
     .container {
+        // Example of overriding default element styling with Bulma styles in case adding custom
+        // classes can not be done and/or too time-consuming.
         h1 {
             @extend .title;
         }
