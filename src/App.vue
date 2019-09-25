@@ -27,7 +27,12 @@ export default {
     },
     watch: {
         $route (to, from) {
-            let title = 'Marvin\'s Lab'
+            let title = ''
+            if (window.location.origin === 'http://localhost:8080') {
+                title = '[Dev] Marvin\'s Lab'
+            } else {
+                title = 'Marvin\'s Lab'
+            }
             if (to.meta.title !== undefined || to.meta.title !== '') {
                 title += ' | ' + to.meta.title
             }
