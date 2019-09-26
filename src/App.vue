@@ -21,6 +21,9 @@ export default {
                 {
                     text: 'Home',
                     destination: '/'
+                }, {
+                    text: 'Ping',
+                    destination: '/ping'
                 }
             ]
         }
@@ -45,8 +48,5 @@ export default {
 <style lang="scss" scoped>
 #app {
     height: 100%;
-    .section {
-        height: 100%;
-    }
 }
 </style>

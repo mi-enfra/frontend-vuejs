@@ -4,11 +4,13 @@
 @import 'bulma';
 
 html {
-    min-height: 100vh;
+    min-height: 100%;
     overflow: auto;
+    position: relative;
     width: 100%;
     body {
-        height: 100%;
+        height: calc(100% - 3.25rem);
+        position: absolute;
         width: 100%;
     }
 }
