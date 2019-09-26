@@ -22,6 +22,9 @@ export default {
                     text: 'Home',
                     destination: '/'
                 }, {
+                    text: 'Math',
+                    destination: '/math'
+                }, {
                     text: 'Ping',
                     destination: '/ping'
                 }

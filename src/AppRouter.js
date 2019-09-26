@@ -19,6 +19,16 @@ export default new Router(
                     title: 'Home'
                 }
             }, {
+                path: '/math',
+                name: 'math',
+                component: () => import(
+                    /* webpackChunkName: "math" */
+                    './Pages/Math/Math.vue'
+                ),
+                meta: {
+                    title: 'Home'
+                }
+            }, {
                 path: '/ping',
                 name: 'ping',
                 component: () => import(
