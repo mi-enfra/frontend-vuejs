@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './AppRouter'
 import VueMasonry from 'vue-masonry-css'
 import './Styles/global.scss'
+import './registerServiceWorker'
 
 Vue.config.productionTip = false
 Vue.use(VueMasonry)

@@ -5,14 +5,21 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "capacitor-copy": "vue-cli-service capacitor-copy",
+    "capacitor-init": "vue-cli-service capacitor-init",
+    "capacitor-open": "vue-cli-service capacitor-open",
+    "capacitor-update": "vue-cli-service capacitor-update"
   },
   "dependencies": {
+    "@capacitor/cli": "^1.0.0-alpha.38",
+    "@capacitor/core": "^1.0.0-alpha.38",
     "bulma": "^0.7.5",
     "chart.js": "^2.8.0",
     "core-js": "^2.6.5",
     "debounce": "github:component/debounce",
     "ping.js": "^0.2.3",
+    "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-chartjs": "^3.4.2",
     "vue-router": "^3.0.3",
@@ -21,6 +28,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-plugin-pwa": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
@@ -28,6 +36,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-pwa": "^1.0.0-alpha.1",
     "vue-masonry-css": "^1.0.3",
     "vue-template-compiler": "^2.6.10"
   }
