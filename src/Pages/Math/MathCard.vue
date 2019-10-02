@@ -1,11 +1,12 @@
 <template>
-    <div class="box has-text-right is-family-monospace">
+    <div class="box has-background-white-bis has-text-right is-family-monospace">
         <p>{{ card.addendFirst }}</p>
         <p>+ {{ card.addendSecond }}</p>
         <input class="input has-text-right" autofocus
             v-bind:class="{
-                'is-success': isCorrect(),
-                'is-danger': !isCorrect() && this.answer !== '',
+                'has-text-white': this.answer !== '',
+                'has-background-success': isCorrect(),
+                'has-background-danger': !isCorrect() && this.answer !== '',
             }"
             v-bind:tabindex="card.index"
             v-model="answer">
