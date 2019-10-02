@@ -26,7 +26,7 @@ export default new Router(
                     './Pages/Math/Math.vue'
                 ),
                 meta: {
-                    title: 'Home'
+                    title: 'Math'
                 }
             }, {
                 path: '/ping',
@@ -36,7 +36,7 @@ export default new Router(
                     './Pages/Ping/Ping.vue'
                 ),
                 meta: {
-                    title: 'Home'
+                    title: 'Ping'
                 }
             }, {
                 path: '/404',
@@ -46,7 +46,7 @@ export default new Router(
                     './Pages/404.vue'
                 ),
                 meta: {
-                    title: 'Page Not Found'
+                    title: 'Not Found'
                 }
             }, {
                 path: '*',
