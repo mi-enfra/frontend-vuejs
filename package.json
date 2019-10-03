@@ -18,6 +18,7 @@
     "chart.js": "^2.8.0",
     "core-js": "^2.6.5",
     "debounce": "github:component/debounce",
+    "dexie": "^2.0.4",
     "ping.js": "^0.2.3",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",

@@ -1,7 +1,6 @@
 <template>
     <div class="section">
         <chart id="chart"
-            v-if="this.googleData.length > 0"
             v-bind:google-data="this.googleData"
             v-bind:labels="this.labels">
         </chart>
@@ -11,6 +10,7 @@
 <script>
 import Ping from 'ping.js'
 import Chart from './PingChart'
+import Dexie from 'dexie'
 
 export default {
     name: 'Ping',
@@ -20,30 +20,43 @@ export default {
     data () {
         return {
             Ping: new Ping(),
+            db: new Dexie('Ping'),
+            dbCounter: 0,
             labels: [],
             limit: 300,
-            googleData: [],
-            stats: {
-                average: 0,
-                highest: 0,
-                lowest: 0
-            }
+            googleData: []
         }
     },
     created () {
         setInterval(this.runPing, 1000)
-        while (this.googleData.length <= this.limit) {
-            this.googleData.splice(0, 0, NaN)
-            this.labels.splice(0, 0, this.googleData.length - 1)
-        }
+        this.db.version(1).stores({
+            ping: 'id, latency'
+        })
     },
     methods: {
         runPing () {
-            this.Ping.ping('https://www.google.com', (err, data) => {
-                if (err) { data = -1000 }
-                if (this.googleData.length > this.limit) { this.googleData.shift() }
-                this.googleData.push(data)
+            this.Ping.ping('https://www.google.com', async (err, data) => {
+                if (err) {
+                    console.error(err)
+                    return 0
+                }
+                await this.saveToDatabase(data)
+                var pingArray = await this.db.ping.toArray()
+                pingArray.forEach((value, index) => {
+                    this.googleData.splice(index, 1, value.latency)
+                    this.labels.splice(index, 1, this.limit - index)
+                })
             })
+        },
+        async saveToDatabase (latency) {
+            await this.db.ping.put({
+                id: this.dbCounter,
+                latency: latency
+            })
+            this.dbCounter++
+            if (this.dbCounter + 1 > this.limit) {
+                this.dbCounter = 0
+            }
         }
     }
 }

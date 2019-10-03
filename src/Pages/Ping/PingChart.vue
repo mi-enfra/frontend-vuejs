@@ -37,7 +37,7 @@ export default {
                         },
                         ticks: {
                             callback: function (dataLabel, index) {
-                                return index % 10 === 0 ? dataLabel : ''
+                                return dataLabel % 10 === 0 ? dataLabel : ''
                             }
                         }
                     }],

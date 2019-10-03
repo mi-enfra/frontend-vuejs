@@ -14,10 +14,7 @@ export default new Router(
                 component: () => import(
                     /* webpackChunkName: "home" */
                     './Pages/Home.vue'
-                ),
-                meta: {
-                    title: 'Home'
-                }
+                )
             }, {
                 path: '/math',
                 name: 'math',
